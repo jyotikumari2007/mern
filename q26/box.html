@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Model</title>
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .my-box {
+      width: 200px;
+      height: 80px;
+      padding: 20px;
+      border: 10px solid #1d3557;
+      margin: 30px;
+      background: #a8dadc;
+      display: grid;
+      place-items: center;
+      font-weight: bold;
+    }
+
+    .layer {
+      display: grid;
+      place-items: center;
+      position: relative;
+      text-align: center;
+      font-size: .8rem;
+    }
+
+    .l-margin {
+      background: #f9cb9c;
+      padding: 36px;
+    }
+
+    .l-border {
+      background: #ffe599;
+      padding: 22px;
+    }
+
+    .l-padding {
+      background: #b6d7a8;
+      padding: 36px;
+    }
+
+    .l-content {
+      background: #9fc5e8;
+      padding: 28px 40px;
+    }
+
+    .tag {
+      position: absolute;
+      top: 3px;
+      left: 8px;
+      font-weight: bold;
+    }
+
+    .demo {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #999;
+      padding: .35rem .7rem;
+    }
+
+    code {
+      background: #eee;
+      padding: 0 .25rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Box Model of .my-box</h1>
+
+  <div class="demo">
+    <div class="my-box">Hello</div>
+
+    <div class="layer l-margin">
+      <span class="tag">margin 30px</span>
+
+      <div class="layer l-border">
+        <span class="tag">border 10px</span>
+
+        <div class="layer l-padding">
+          <span class="tag">padding 20px</span>
+
+          <div class="layer l-content">
+            content<br>200 × 80
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Calculation</h2>
+
+  <table>
+    <tr>
+      <th>Total Width</th>
+      <td>200 + 40 + 20 = 260px (+60px margin = 320px)</td>
+    </tr>
+
+    <tr>
+      <th>Total Height</th>
+      <td>80 + 40 + 20 = 140px (+60px margin = 200px)</td>
+    </tr>
+  </table>
+
+  <h2>Box Sizing: Border Box</h2>
+
+  <p>
+    With box-sizing: border-box, padding and border are
+    included inside the given width and height.
+  </p>
+
+  <p>
+    <em>Tip: Press F12 → Elements → Computed to inspect
+    the Box Model.</em>
+  </p>
+
+</body>
+</html>
